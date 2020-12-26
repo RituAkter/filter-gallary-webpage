@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Gallary</title>
+    <link rel="stylesheet" href="css/style-2.css">
+</head>
+
+<body>
+    <div class="topbar" id="topbar">
+        <div class="logo">WebsiteLogo</div>
+        <div class="tabs">
+            <div class="tab" data-filter="all">All</div>
+            <div class="tab" data-filter="headphpones">Headphones</div>
+            <div class="tab" data-filter="shoes">Shoes</div>
+            <div class="tab" data-filter="watches">Watches</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image headphpones">
+            <img src="./image/headphone1.jpg" alt="sorry">
+        </div>
+        <div class="image shoes">
+            <img src="./image/dinner-party-1.jpg" alt="hello">
+        </div>
+        <div class="image watches">
+            <img src="./image/watch1.jpg" alt="">
+        </div>
+
+        <div class="image headphpones">
+            <img src="./image/mobile1.jpg" alt="hello">
+        </div>
+        <div class="image shoes">
+            <img src="./image/camera1.jpg" alt="hello">
+        </div>
+        <div class="image watches">
+            <img src="./image/pizza-1.jpg" alt="">
+        </div>
+
+        <div class="image headphpones">
+            <img src="./image/p849737839-4.jpg" alt="hello">
+        </div>
+        <div class="image shoes">
+            <img src="./image/shoe3.jpg" alt="hello">
+        </div>
+        <div class="image watches">
+            <img src="./image/watch3.jpg" alt="">
+        </div>
+
+        <div class="image headphpones">
+            <img src="./image/headphone4.jpg" alt="hello">
+        </div>
+        <div class="image shoes">
+            <img src="./image/shoe4.jpg" alt="hello">
+        </div>
+        <div class="image watches">
+            <img src="./image/watch4.jpg" alt="sorry">
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tab').click(function(){
+                const value = $(this).attr('data-filter');
+                if(value == 'all'){
+                    $('.image').show('1000');
+                }
+                else{
+                    $('.image').not('.'+value).hide('1000');
+                    $('.image').filter('.'+value).show('1000')
+                }
+            })
+            //add active class on selected item
+
+            $('.tab').click(function(){
+                $(this).addClass('active').siblings().removeClass('active')
+            })
+        });
+    </script>
+
+    <script>
+
+    //     filterSelection("all");
+
+        
+    //     function filterSelection(c){
+    //         var x,y,i,j;
+    //         x=document.getElementsByClassName("image");
+    //         y=document.getElementsByClassName("tab");
+
+    //         for(j=0; j<y.length; j++){
+    //             //here we check for active option
+    //             RemoveClass(y[j],"show");
+    //             if(y[j].className.indexOf(c)>-1){
+    //                 AddClass(y[j],"show");
+    //             }
+    //         }
+
+    //         if(c=="all"){
+    //             c=""
+    //         }
+
+    //         for(i=0; i<x.length; i++){
+    //             RemoveClass(x[i], "show");
+    //             if(x[i].className.indexOf(c) > -1){
+    //                 AddClass(x[i], "show");
+    //             }
+    //         }
+            
+    //     }
+
+    //     function AddClass(element,name){
+    //             element.classList.add(name);
+    //     }
+
+    //     function RemoveClass(element,name){
+    //             element.classList.remove(name);
+    //     }
+
+    // </script>
+
+</body>
+</html>
